@@ -42,4 +42,5 @@ int    main(void)
     {
         printf("Day : %d\tThis week has ended.\n", day);
     }
+    return(0);
 }
