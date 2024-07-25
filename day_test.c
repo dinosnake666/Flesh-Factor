@@ -1,50 +1,59 @@
 #include <stdio.h>
 
-int    main(void)
+int main()
 {
-    int    day;
-    int    bread;
+    int day;
+    int hp;
+    int food;
     char    eat;
-    int    flag;
-    unsigned int    hp;
+    int eat_flag;
 
-    day = 10;
-    bread = 10;
-    hp = 100;
-    while (day > 0)
+    day = 7;
+    hp = 90;
+    food = 4;
+    eat_flag = 0;
+    while (day >= 0 && hp >= 0)
     {
-        printf("Day : %d\n", day);
-        day--;
-        while (hp != 0)
+        printf("Current day : %d\t\t", day);
+        printf("Current HP : %d\n", hp);
+        if (food <= 0)
+            printf("There is no food for today.\n");
+        else if (food > 0)
         {
-            printf("Do you want to eat bread ? [y/n] : ");
-            scanf("%c", &eat);
-            if (eat == 'y')
+            printf("There is %d amount of food to eat.\n", food);
+            loop:
+            printf("Do you want to eat ? [y/n]\t");
+            scanf("%s", &eat);
+
+            while (eat_flag == 0 && getchar() != '\n');
+            if (eat != 'y' && eat != 'n')
             {
-                bread--;
-                printf("You consumed bread.\tRemaining bread : %d\n", bread);
-                if (hp < 100)
-                    hp = hp + 10;
-                printf("Current hp : %u\n", hp);
+                printf("Maybe you didn't understand me well...\n");
+                goto loop;
             }
+            else if (eat == 'y')
+                eat_flag = 1;
             else if (eat == 'n')
-            {
-                hp = hp - 10;
-                printf("You didn't eat bread... maybe for later.\n");
-                printf("Remaining bread : %d\n", bread);
-                printf("Current hp : %u\n", hp);
-            }
-            /*else 
-            {
-                printf("You little prankster, I'm going to sell all your data since you're SO smart...\n");
-                return(0);
-            }*/
+                eat_flag = 2;
+        }
+        day--;
+        if (eat_flag == 1)
+        {
+            hp = hp + 10;
+            food--;
+            printf("You ate food.\n Current HP : %d\t\t Current amount of food : %d\n", hp, food);
+            eat_flag = 0;
+        }
+        else
+        {
+            hp = hp - 15;
+            printf("You didn't eat... Maybe tomorrow.\n");
+            eat_flag = 0;
         }
     }
-        if (day == 0)
-        {
-            printf("Day : %d\tThis week has ended.\n", day);
-        }
-        return(0);
-    
+    if (hp <= 0)
+        printf("\t\nYou died :(\n");
+    else
+        printf("\t\nYAY YOU SURVIVED :D\n");
+    return(0);
 }
