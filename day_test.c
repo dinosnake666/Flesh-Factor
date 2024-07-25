@@ -12,7 +12,7 @@ int main()
     hp = 90;
     food = 4;
     eat_flag = 0;
-    while (day >= 0 && hp >= 0)
+    while (day >= 0 && hp > 0)
     {
         printf("Current day : %d\t\t", day);
         printf("Current HP : %d\n", hp);
@@ -37,14 +37,14 @@ int main()
                 eat_flag = 2;
         }
         day--;
-        if (eat_flag == 1)
+        if (eat_flag == 1 && day > 0)
         {
             hp = hp + 10;
             food--;
             printf("You ate food.\n Current HP : %d\t\t Current amount of food : %d\n", hp, food);
             eat_flag = 0;
         }
-        else
+        else if (day > 0)
         {
             hp = hp - 15;
             printf("You didn't eat... Maybe tomorrow.\n");
