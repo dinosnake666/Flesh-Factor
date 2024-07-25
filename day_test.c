@@ -41,18 +41,20 @@ int main()
         day--;
         if (eat_flag == 1 && day > 0)
         {
-            hp = hp + 10;
+            if (hp < 100)
+                hp += 10;
             food--;
             printf("You ate food.\n Current HP : %d\t\t Current amount of food : %d\n", hp, food);
             eat_flag = 0; //reset flag
         }
         else if (day > 0)
         {
-            hp = hp - 15;
+            hp -= 15;
             printf("You didn't eat... Maybe tomorrow.\n");
             eat_flag = 0; //reset flag
         }
     }
+    printf("\n\n");
     if (hp <= 0)
         printf("\t\nYou died :(\n");
     else
