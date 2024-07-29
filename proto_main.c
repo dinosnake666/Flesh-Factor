@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_survive();
+void ft_survive();
 
 int main(int argc, char **argv)
 {
