@@ -10,14 +10,20 @@ int str_letters(char *str)
     return(letter_count);
 }
 
-char *ft_strlen_check(void)
+char *ft_strlen_check(char *str)
 {
-    char str[0];
     do
     {
-        //printf("Enter a single character : ");
+        printf("Enter a single character : ");
         scanf("%s", str);
     } while (str_letters(str) != 1);
     
     return(str);
+}
+
+int main(void)
+{
+    char test[0];
+    printf("Returned character : %s", ft_strlen_check(test));
+    return(0);
 }
