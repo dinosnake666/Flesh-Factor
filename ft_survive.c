@@ -2,7 +2,7 @@
 
 void ft_survive(int day)
 {
-    while (day > 0 && day <= 10)
+    while (day > 0 && day <= 10 )
     {
         int food_ration;
 
