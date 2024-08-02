@@ -10,13 +10,13 @@ int str_letters(char *str)
     return(letter_count);
 }
 
-char *ft_strlen_check(char *str)
+char *ft_letter_check(char *str)
 {
     do
     {
-        printf("Enter a single character : ");
+        printf("Enter [y] : ");
         scanf("%s", str);
-    } while (str_letters(str) != 1);
+    } while ((str[0] != 'n' && str[0] != 'y') || str_letters(str) != 1);
     
     return(str);
 }
@@ -24,6 +24,6 @@ char *ft_strlen_check(char *str)
 int main(void)
 {
     char test[0];
-    printf("Returned character : %s", ft_strlen_check(test));
+    printf("Valid input : %s", ft_letter_check(test));
     return(0);
 }
