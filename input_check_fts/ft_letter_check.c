@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int	letter_count(char *str);
+int	ft_letter_count(char *str);
 
-int	letter_check(char *str)
+int	ft_letter_check(char *str)
 {
     do
     {

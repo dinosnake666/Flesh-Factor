@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int     letter_count(char *str)
+int     ft_letter_count(char *str)
 {
     int counter;
 

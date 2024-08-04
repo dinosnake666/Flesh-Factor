@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void ft_survive(int day)
+void	ft_survive(int day)
 {
     while (day > 0 && day <= 10 )
     {
-        int food_ration;
+        int	food_ration;
 
         printf("Current day : %d\n", day);
 
