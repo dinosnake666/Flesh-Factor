@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int		ft_food(void);
 
 void	ft_time(int day)
 {
