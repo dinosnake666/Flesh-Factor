@@ -1,1 +1,1 @@
-trying to make a simple game with the little knowledge i've got from 42 :) 
+trying to make a simple game with the little knowledge i've got from 42 piscine :) 
