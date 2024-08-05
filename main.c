@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	ft_survive(int day);
+void	ft_time(int day);
 
 int	main(int argc, char **argv)
 {
@@ -9,6 +9,6 @@ int	main(int argc, char **argv)
 		return(0);
 	if (argv[1][0] == '\0')
 		return(0);
-	ft_survive(atoi(argv[1]));
+	ft_time(atoi(argv[1]));
 	return (0);
 }
