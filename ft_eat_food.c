@@ -4,7 +4,7 @@
 
 int ft_letter_check(char *str);//declaring input check function;
 
-int ft_eat_food(int hp)
+int ft_eat_food(void)
 {
     struct available_food//declaring food struct;
     {
@@ -44,10 +44,13 @@ int ft_eat_food(int hp)
             printf("You lost %d HP !\n", encountered_food[chosen].hp_mod);
         else
             printf("You gained %d HP!\n", encountered_food[chosen].hp_mod);
+        printf("----------------\n----------------\n");
         return(encountered_food[chosen].hp_mod);
     }
     else 
+    {
         printf("You decided to not eat... Maybe later ?\n");
-    printf("----------------\n----------------\n");
-    return(0);
+        printf("----------------\n----------------\n");
+        return(0);
+    }
 }
